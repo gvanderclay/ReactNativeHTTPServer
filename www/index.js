@@ -1,1 +1,1 @@
-document.findElementById("newStuff").innerHTML = "The javascript works?";
+document.getElementById("newStuff").innerHTML = "The javascript works?";
