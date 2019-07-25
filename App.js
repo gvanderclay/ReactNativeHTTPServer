@@ -7,7 +7,7 @@ class App extends React.Component {
   state = {
     url: null
   };
-  componentWillMount() {
+  componentDidMount() {
     this.server = new StaticServer(8080);
     this.server.start().then(url => {
       this.setState({ url });
