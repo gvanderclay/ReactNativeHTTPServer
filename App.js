@@ -9,12 +9,13 @@ class App extends React.Component {
     url: null
   };
   async componentWillMount() {
-    this.server = new StaticServer(8080);
-    this.server.start().then(url => {
-      this.setState({ url });
-    });
-    const result = await RNFS.readDir(RNFS.MainBundlePath);
-    console.log(result.map(x => x.path));
+    const result = await RNFS.readDirAssets("index.html");
+    console.log(result);
+    // let path = RNFS.MainBundlePath + "/www";
+    // this.server = new StaticServer(8080, path);
+    // this.server.start().then(url => {
+    //   this.setState({ url });
+    // });
   }
 
   componentWillUnmount() {
