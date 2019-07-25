@@ -8,7 +8,7 @@ class App extends React.Component {
   state = {
     url: null
   };
-  async componentWillMount() {
+  async componentDidMount() {
     moveAndroidFiles();
     let path = getPath();
     this.server = new StaticServer(8080, path);
