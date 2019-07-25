@@ -57,6 +57,10 @@ PODS:
     - React-cxxreact (= 0.60.4)
     - React-jsi (= 0.60.4)
   - React-jsinspector (0.60.4)
+  - react-native-static-server (0.4.2):
+    - React
+  - react-native-webview (5.12.1):
+    - React
   - React-RCTActionSheet (0.60.4):
     - React-Core (= 0.60.4)
   - React-RCTAnimation (0.60.4):
@@ -95,6 +99,8 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-static-server (from `../node_modules/react-native-static-server`)
+  - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -130,6 +136,10 @@ EXTERNAL SOURCES:
     :path: ../node_modules/react-native/ReactCommon/jsiexecutor
   React-jsinspector:
     :path: ../node_modules/react-native/ReactCommon/jsinspector
+  react-native-static-server:
+    :path: ../node_modules/react-native-static-server
+  react-native-webview:
+    :path: ../node_modules/react-native-webview
   React-RCTActionSheet:
     :path: ../node_modules/react-native/Libraries/ActionSheetIOS
   React-RCTAnimation:
@@ -166,6 +176,8 @@ SPEC CHECKSUMS:
   React-jsi: 40f467ff088c811c6630acccb4aea57ea7ccb1b5
   React-jsiexecutor: e4b4717060a0cd8d0270323b5655a68c95432efd
   React-jsinspector: 044105eea064aec81adc5e4d777a8f6589e7d094
+  react-native-static-server: c01bb73594a9b2328d7c8136719564d018a02336
+  react-native-webview: ad9581723f4d401c22cb3a371811d4dc9310df56
   React-RCTActionSheet: 08864c609d9f959abf3d51fdd93f8bc6e91f21eb
   React-RCTAnimation: a4547e9fac2627ded3df9d302f5558b475faf819
   React-RCTBlob: 62d5c263a2adb8f7a2cafd601beba18a2d99cbbb
@@ -178,6 +190,6 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: f32b93e0953d7c07fd5dd45305406282cfdc95cf
   yoga: 88c514f310aff89b94a14c5fbf44b95735af0cb7
 
-PODFILE CHECKSUM: f236329c0d7cda041c48f8b8030787969d39901d
+PODFILE CHECKSUM: 21cc27a1ed0e2d0b8e82b576f0467ab71e2a9d9c
 
 COCOAPODS: 1.4.0
