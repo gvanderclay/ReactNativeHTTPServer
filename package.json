@@ -10,7 +10,8 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-static-server": "^0.4.2"
+    "react-native-static-server": "^0.4.2",
+    "react-native-webview": "^5.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
