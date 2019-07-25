@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, Text, View, Platform } from "react-native";
 import StaticServer from "react-native-static-server";
 import WebView from "react-native-webview";
 import RNFS from "react-native-fs";
@@ -9,13 +9,12 @@ class App extends React.Component {
     url: null
   };
   async componentWillMount() {
-    const result = await RNFS.readDirAssets("index.html");
-    console.log(result);
-    // let path = RNFS.MainBundlePath + "/www";
-    // this.server = new StaticServer(8080, path);
-    // this.server.start().then(url => {
-    //   this.setState({ url });
-    // });
+    moveAndroidFiles();
+    let path = getPath();
+    this.server = new StaticServer(8080, path);
+    this.server.start().then(url => {
+      this.setState({ url });
+    });
   }
 
   componentWillUnmount() {
@@ -43,6 +42,22 @@ class App extends React.Component {
         </View>
       </SafeAreaView>
     );
+  }
+}
+
+function getPath() {
+  return Platform.OS === "android"
+    ? RNFS.DocumentDirectoryPath + "/www"
+    : RNFS.MainBundlePath + "/www";
+}
+
+async function moveAndroidFiles() {
+  if (Platform.OS === "android") {
+    await RNFS.mkdir(RNFS.DocumentDirectoryPath + "/www");
+    const files = ["www/index.html", "www/index.css", "www/index.js"];
+    await files.forEach(async file => {
+      await RNFS.copyFileAssets(file, RNFS.DocumentDirectoryPath + "/" + file);
+    });
   }
 }
 
