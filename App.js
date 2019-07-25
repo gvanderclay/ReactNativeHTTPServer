@@ -2,16 +2,19 @@ import React from "react";
 import { SafeAreaView, Text, View } from "react-native";
 import StaticServer from "react-native-static-server";
 import WebView from "react-native-webview";
+import RNFS from "react-native-fs";
 
 class App extends React.Component {
   state = {
     url: null
   };
-  componentWillMount() {
+  async componentWillMount() {
     this.server = new StaticServer(8080);
     this.server.start().then(url => {
       this.setState({ url });
     });
+    const result = await RNFS.readDir(RNFS.MainBundlePath);
+    console.log(result.map(x => x.path));
   }
 
   componentWillUnmount() {
