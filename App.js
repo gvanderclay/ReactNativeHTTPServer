@@ -10,6 +10,7 @@ class App extends React.Component {
   };
 
   webView = null;
+
   async componentDidMount() {
     moveAndroidFiles();
     let path = getPath();
@@ -43,7 +44,14 @@ class App extends React.Component {
             source={{ uri: this.state.url }}
             onMessage={event => {
               const { data } = event.nativeEvent;
-              console.log(data);
+              const clientResponseCode = `
+                window.postMessage(${JSON.stringify(data)}, "*");
+                true;
+              `;
+
+              if (this.webView) {
+                this.webView.injectJavaScript(clientResponseCode);
+              }
             }}
           />
         </View>
