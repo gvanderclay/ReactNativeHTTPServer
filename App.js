@@ -9,6 +9,7 @@ class App extends React.Component {
     url: null
   };
 
+  webView = null;
   async componentDidMount() {
     moveAndroidFiles();
     let path = getPath();
@@ -37,6 +38,7 @@ class App extends React.Component {
         <Text>{this.state.url}</Text>
         <View style={{ backgroundColor: "red", height: "100%", width: "100%" }}>
           <WebView
+            ref={webView => (this.webView = webView)}
             style={{ flex: 1, marginBottom: 20 }}
             source={{ uri: this.state.url }}
             onMessage={event => {
