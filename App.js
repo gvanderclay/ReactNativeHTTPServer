@@ -8,6 +8,7 @@ class App extends React.Component {
   state = {
     url: null
   };
+
   async componentDidMount() {
     moveAndroidFiles();
     let path = getPath();
@@ -38,6 +39,10 @@ class App extends React.Component {
           <WebView
             style={{ flex: 1, marginBottom: 20 }}
             source={{ uri: this.state.url }}
+            onMessage={event => {
+              const { data } = event.nativeEvent;
+              console.log(data);
+            }}
           />
         </View>
       </SafeAreaView>
