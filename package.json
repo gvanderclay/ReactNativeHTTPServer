@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.4",
+    "react-native": "0.62.3",
     "react-native-fs": "^2.14.0",
     "react-native-static-server": "git://github.com/futurepress/react-native-static-server.git#390303423ef1d2185d64eff246532bdc8b57fb33",
     "react-native-webview": "^11.0.0"
